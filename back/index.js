@@ -8,11 +8,16 @@ const User = require("./models/Users");
 const Clothe = require("./models/Clothes");
 const Sale = require("./models/Sales");
 const SaleDetail = require("./models/SaleDetails");
+const categoryDetail = require("./models/Category");
+const supplierDetail = require("./models/Supplier");
+
 
 // Importar rutas
 const userRoutes = require("./routes/userRoutes");
 const clothesRoutes = require("./routes/clothesRoutes");
 const salesRoutes = require("./routes/saleRoutes");
+const categoryRoutes = require("./routes/categoryRoutes"); 
+const supplierRoutes = require("./routes/supplierRoutes");
 
 const app = express();
 app.use(express.json());
@@ -26,6 +31,8 @@ app.get("/", (req, res) => {
 app.use("/users", userRoutes);
 app.use("/clothes", clothesRoutes);
 app.use("/sales", salesRoutes);
+app.use("/categories", categoryRoutes);
+app.use("/suppliers", supplierRoutes);
 
 // Sincronizar DB y levantar servidor
 sequelize

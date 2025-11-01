@@ -24,6 +24,14 @@ const User = sequelize.define("User", {
     type: DataTypes.BOOLEAN,
     defaultValue: true,
   },
+  esetToken: {
+    type: DataTypes.STRING,
+    allowNull: true, 
+  },
+  resetTokenExpires: {
+    type: DataTypes.DATE, 
+    allowNull: true,
+  },
 }, {
   tableName: "users",
   timestamps: true, // Agregar campos de creación y actualización
